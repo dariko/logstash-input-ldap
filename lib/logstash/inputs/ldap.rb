@@ -98,7 +98,7 @@ class LogStash::Inputs::Ldap < LogStash::Inputs::Base
       tls_options = (not @cacert_path) ? {} : {
         :ca_file => @cacert_path
       }
-      enc = ( not @ssl ) ? {} : {
+      enc = ( not @ssl ) ? nil : {
           :method => :simple_tls,
           :tls_options => tls_options
       }
